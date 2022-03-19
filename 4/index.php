@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Exercice 4</title>
 </head>
 
 <body>
+<?php
+    include('../template/_navbar.php');
+?>
     <h1>Exercice 4 : Templating</h1>
     <p>A l'aide d'instructions d'inclusion de fichiers (comprendre require/include), créez un système de templating qui
         permet d'afficher une navbar et un footer. Utilisez cette navbar(ou le footer) pour naviguer vers les différents

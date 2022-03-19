@@ -1,0 +1,114 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+nav a{
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+
+#post_form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding:2em 1em;
+    background-color: rgb(54, 192, 173);
+    box-shadow: 2px 2px 3px rgb(171, 171, 171);
+    width: 30%;
+    margin: auto;
+    margin-top: 1em;
+    gap: 1em;
+    border-radius: 10px;
+    border: 2px solid blue;
+}
+
+#post_form input,select{
+    width: 33%;
+    margin: auto;
+    padding: 5px;
+}
+
+#post_form input:nth-of-type(4){
+    width: 55%;
+}
+
+button{
+    width: 33%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.infoForm{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    padding:2em 1em;
+    background-color: rgb(54, 192, 173);
+    box-shadow: 2px 2px 3px rgb(171, 171, 171);
+    width: 30%;
+    margin: auto;
+    margin-top: 1em;
+    gap: 1em;
+    border-radius: 10px;
+    border: 2px solid blue;
+}
+
+#post_form label{
+    text-align: center;
+}
+
+.errorMessage{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sucess{
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+table{
+    margin: auto;
+    background-color: #FAFAFA;
+    box-shadow: 3px 3px 5px lightgrey;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+table td,th{
+    padding: 20px;
+}
+
+table,td,tr,th{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+tr a:nth-of-type(2){
+    color: red;
+    margin-left: 10px;
+}
+
+#searchBar,#searchByCompagnie{
+    display: block;
+    margin:2em auto;
+    padding: 10px;
+    border-radius: 5px;
+}

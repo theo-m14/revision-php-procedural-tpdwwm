@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Exercice 5</title>
 
 </head>
 
 <body>
+<?php
+    include('../template/_navbar.php');
+?>
     <h1>Exercice 5 : Messages d'erreur via requête GET</h1>
     <p>A l'aide de manipulation des requêtes GET, créez un système d'alerte qui se base sur les requêtes reçues dans
         l'URL pour afficher l'état de fonctionnement de l'application. Ajoutez le sur les exercices précédents.(CONSEIL

@@ -3,7 +3,20 @@
 
     if (isset($_GET['logout'])) {
         session_destroy();
-        header('Location:index.php?success=disconnect');
+        header('Location:index.php');
+    }
+    if(isset($_GET['error'])){
+        $errorArray = [
+            'username' => 'Votre pseudo doit être renseigné et faire plus de 4 caratères',
+            'pass' => 'Votre mot de passe doit être renseigné et faire plus de 6 caratères',
+            'verfiPass' => 'Vos mots de passes ne correspondent pas',
+            'email' => 'Votre email doit être renseigné et faire plus de 4',
+        ];
+        if(in_array($errorArray[$_GET['error']],$errorArray)){
+            $errorMessage = $errorArray[$_GET['error']];
+        }else{
+            $errorMessage = "Erreur inconnue";
+        }
     }
 ?>
 
@@ -14,16 +27,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
      
 
 </head>
-
+<?php
+    include('../template/_navbar.php');
+?>
 <body>
-    <?php
-        include '../4/_navbar.php';
-        include_once '../5/_alert.php';
-    ?>
     <h1>Exercice 3 : Inscription</h1>
     <p>A l'aide d'un formulaire HTML et de PHP, simulez un formulaire d'inscription (avec hashage du mot de passe)
         via une requête POST sur une page d'affichage et une page de processing. Si la connexion est effective alors on
@@ -41,6 +53,20 @@
         <li>confirmation password</li>
         <li>email</li>
     </ul>
+    <?php if(empty($_SESSION)) {?>
+
+        <form action="index_post.php" method="post" id="post_form">
+            <input type="text" required name="username" placeholder="Votre pseudo">
+            <input type="password" required name="password" placeholder="Mot de passe">
+            <input type="password" required name="confirm_password" placeholder="Confirmer le mot de passe">
+            <input type="text" required name="email" placeholder="Votre email">
+            <button type="submit">Inscription</button>
+        </form>
+
+    <?php }else{ ?>
+        <p style="text-align: center;">Bienvenue <?php echo $_SESSION['username']; ?></p>
+        <a href="index.php?logout">Déconnexion</a>
+    <?php }?>
 </body>
 
 </html>
